@@ -1,0 +1,22 @@
+{
+  "name": "noiserecords",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoderXXL/noiseRecords.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoderXXL/noiseRecords/issues"
+  },
+  "homepage": "https://github.com/CoderXXL/noiseRecords#readme",
+  "dependencies": {
+    "workbox-sw": "^3.6.3"
+  }
+}
