@@ -12,6 +12,7 @@ sqlalchemy = "*"
 psycopg2-binary = "*"
 flask = "*"
 marshmallow = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.6"
