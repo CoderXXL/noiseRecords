@@ -2,11 +2,10 @@
 <router-outlet></router-outlet> -->
 
 <div style="text-align:center">
-    <h1>Exams</h1>
+    <h1>Users</h1>
 </div>
-<h2>Here are the exams created so far: </h2>
 <ul>
-    <li *ngFor="let exam of examsList">
-        {{exam.title}}
+    <li *ngFor="let user of usersList">
+        {{user.name}}
     </li>
 </ul>

@@ -1,6 +1,6 @@
-export class Exam {
+export class User {
   constructor(
-    public title: string,
+    public name: string,
     public description: string,
     public _id?: number,
     public updatedAt?: Date,

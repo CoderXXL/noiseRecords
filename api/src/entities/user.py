@@ -1,25 +1,24 @@
-# coding=utf-8
-
 from sqlalchemy import Column, String
 
 from .entity import Entity, Base
 
 from marshmallow import Schema, fields
 
-class Exam(Entity, Base):
-    __tablename__ = 'exams'
+class User(Entity, Base):
+    __tablename__ = 'user'
 
-    title = Column(String)
+    name = Column(String)
     description = Column(String)
 
-    def __init__(self, title, description, created_by):
+    def __init__(self, name, description, created_by):
         Entity.__init__(self, created_by)
-        self.title = title
+        self.name = name
         self.description = description
 
-class ExamSchema(Schema):
+
+class UserSchema(Schema):
     id = fields.Number()
-    title = fields.Str()
+    name = fields.Str()
     description = fields.Str()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()

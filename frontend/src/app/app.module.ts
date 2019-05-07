@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ExamsApiService } from './exams/exams-api.service';
+import { UsersApiService } from './users/users-api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -26,7 +26,7 @@ import { AboutComponent } from './about/about.component';
       enabled: environment.production
     })
   ],
-  providers: [ExamsApiService],
+  providers: [UsersApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -3,10 +3,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { API_URL } from '../env';
-import { Exam } from './exam.model';
+import { User } from './user.model';
 
 @Injectable()
-export class ExamsApiService {
+export class UsersApiService {
   constructor(private http: HttpClient) {}
 
   private static _handleError(err: HttpErrorResponse | any) {
@@ -15,10 +15,9 @@ export class ExamsApiService {
     );
   }
 
-  // GET list of public, future events
-  getExams(): Observable<any> {
+  getUsers(): Observable<any> {
     return this.http
-      .get(`${API_URL}/exams`)
-      .pipe(catchError(ExamsApiService._handleError));
+      .get(`${API_URL}/users`)
+      .pipe(catchError(UsersApiService._handleError));
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ExamsApiService } from './exams/exams-api.service';
-import { Exam } from './exams/exam.model';
+import { UsersApiService } from './users/users-api.service';
+import { User } from './users/user.model';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +10,18 @@ import { Exam } from './exams/exam.model';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'noiseRecords';
-  examsListSubs: Subscription;
-  examsList: Exam[];
-  constructor(private examsApi: ExamsApiService) {}
+  usersListSubs: Subscription;
+  usersList: User[];
+
+  constructor(private usersApi: UsersApiService) {}
 
   ngOnInit() {
-    this.examsListSubs = this.examsApi.getExams().subscribe(res => {
-      this.examsList = res;
-      console.log(res);
+    this.usersListSubs = this.usersApi.getUsers().subscribe(res => {
+      this.usersList = res;
     }, console.error);
   }
 
   ngOnDestroy() {
-    this.examsListSubs.unsubscribe();
+    this.usersListSubs.unsubscribe();
   }
 }
