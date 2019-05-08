@@ -26,7 +26,7 @@ def get_users():
 
 @app.route('/users', methods=['POST'])
 def add_user():
-    posted_user = UserSchema(only=('name', 'description'))\
+    posted_user = UserSchema(only=('name', 'lastname', 'description'))\
         .load(request.get_json())
 
     user = User(**posted_user.data, created_by="HTTP post request")
@@ -38,3 +38,4 @@ def add_user():
     new_user = UserSchema().dump(user).data
     session.close()
     return jsonify(new_user), 201
+
